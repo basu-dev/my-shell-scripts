@@ -1,0 +1,3 @@
+#!/bin/sh
+cat ~/.cache/zsh/history | awk '!x[$0]++' > /tmp/histemp
+cat /tmp/histemp > ~/.cache/zsh/history

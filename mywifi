@@ -1,5 +1,11 @@
-wifi=echo$(nmcli device wifi | grep -v "SSID" |rofi -dmenu -i -p "Select Wifi" ) && \ 
-name=$($wifi | awk '{print $2}') && \
-password=echo$(rofi -dmenu -i -p "Password") && \
-
+#!/bin/bash
+function checkBlank(){
+    [[ $# ]] && exit 1
+}
+wifi=$(nmcli device wifi | grep -v "SSID" |rofi -dmenu -i -p "Select Wifi" ) 
+checkBlank wifi
+name=$($wifi | awk '{print $2}') 
+checkBlank name
+password=echo$(rofi -dmenu -i -p "Password") 
+checkBlank password
 nmcli device wifi connect $name password $password && echo "Done"
