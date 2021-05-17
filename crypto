@@ -7,6 +7,7 @@ currency=$(cat ~/scripts/configs/currency_list.txt | rofi -dmenu -i -p "Select C
 [ ${#currency} == 0 ] && exit 1
 
 data=$(curl -4 -s https://api.coinbase.com/v2/exchange-rates?currency=$crypto | jq .data.rates.$currency)
+
 [ ${#data} == 0 ] && exit 1
 
 function signal(){

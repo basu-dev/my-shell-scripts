@@ -1,3 +1,8 @@
 #!/bin/sh
-cat ~/.cache/zsh/history | awk '!x[$0]++' > /tmp/histemp
-cat /tmp/histemp > ~/.cache/zsh/history
+filepath=~/.cache/zsh/history
+echo "Initial History Count"
+wc -l < "$filepath"
+awk '!x[$0]++' < "$filepath" > /tmp/histemp
+cat /tmp/histemp > "$filepath" 
+echo "Final History Count"
+wc -l < "$filepath"
