@@ -1,4 +1,6 @@
 # My Shell Scripts
+You can clone this repo or copy individual scripts as per your 
+requirement and use the scripts.
 
 ## myip
 It prints your ip address you your terminal.
@@ -28,7 +30,9 @@ XRP, Tether, Cardino etc. and you can see its value in more than 100
 different currencies like USD, NRP, INR, AUD etc.
 
 ### Requirements
-It requires <b>rofi</b>.
+> 1. rofi<br>
+> 2. You need to copy the <b>configs</b> folder above also and place it inside <b>~/scripts</b> folder.<br>
+
 So install rofi first to make it work.
 
 ```
@@ -50,5 +54,31 @@ Creates hotspot with ssid Hotspot and password <b>hello_world</b>
 Hotspot Created
 Ssid: Hotspot
 Password: hello_world
+```
+
+## wallpaper.sh
+Changes wallpaper for your desktop.<br>
+### Requirements
+> Feh
+<br>
+So if you don't have feh. Install it.
+
+### Procedure
+It takes images from <b>~/.config/wallpapers</b> folder.
+Create the folder and place some <b>jpg</b> images for wallpapers inside the folder.
+
+
+In Arch you can do
+```
+> sudo pacman -S feh
+```
+### Usage
+For next wallpaper
+```
+> wallpaper.sh
+```
+For previous 
+```
+> wallpaper.sh prev
 ```
 
