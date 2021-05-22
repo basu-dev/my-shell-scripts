@@ -60,6 +60,8 @@ Password: hello_world
 Changes wallpaper for your desktop.<br>
 ### Requirements
 > Feh
+> sxiv . For menu feature. Not required it you dont use it.
+
 <br>
 So if you don't have feh. Install it.
 
