@@ -2,8 +2,8 @@
 # Wallpaper script
 
 index=1
-config=~/.config/wallpapers/config
-walpaperFolder=~/.config/wallpapers/
+config=~/Wallpapers/config
+walpaperFolder=~/Wallpapers/
 setWallpaper(){
     feh --bg-scale "$1"
     echo "feh --no-fehbg --bg-fill '$1'" > ~/.fehbg
@@ -18,7 +18,7 @@ fromMenu(){
 [ "$1" == "next" ] || [ "$1" == "prev" ] && control=$1 || control="next"
 
 tmp=/tmp/wallpapers
-ls $walpaperFolder*.jpg > $tmp 
+ls $walpaperFolder*.jpg  $walpaperFolder*.png > $tmp 
 totalPictures=$(wc -l < $tmp)
 readIndex(){
 index=$(tail -1 $config | awk '{print $NF}')
