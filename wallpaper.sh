@@ -1,12 +1,13 @@
 #!/bin/sh
-# Wallpaper script
+# Wallpaper script By Basu Dev Adhikari
 
 index=1
 config=~/Wallpapers/config
 walpaperFolder=~/Wallpapers/
+wallpaperScript=~/.fehbg
 setWallpaper(){
-    feh --bg-scale "$1"
-    echo "feh --no-fehbg --bg-fill '$1'" > ~/.fehbg
+    xwallpaper --zoom "$1"
+    echo "xwallpaper --zoom '$1'" >$wallpaperScript 
 }
 fromMenu(){
     image=$(ls $walpaperFolder*.jpg $walpaperFolder*.png | sxiv -tio)
