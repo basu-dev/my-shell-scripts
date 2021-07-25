@@ -1,6 +1,5 @@
 #!/bin/sh
 # Wallpaper script By Basu Dev Adhikari
-
 index=1
 config=~/Wallpapers/config
 walpaperFolder=~/Wallpapers/
