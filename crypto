@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 crypto=$(cat ~/scripts/configs/crypto.txt | rofi -dmenu -i -p "Select Crypto" | awk '{print $NF}')
 [ ${#crypto} == 0 ] && exit 1
 currency=$(cat ~/scripts/configs/currency_list.txt | rofi -dmenu -i -p "Select Currency")
@@ -14,6 +13,7 @@ function signal(){
 	pkill -RTMIN+10 i3blocks
 }
 echo $data | awk -F '"' '{print "'$currency' "$2}' > /tmp/display.txt
+
 tail -n 1 /tmp/display.txt
  signal
 /bin/sleep 2
@@ -22,13 +22,8 @@ if [ $crypto == "ETH" ]
 then
 	echo $data | awk -F '"' '{print "I have '$currency' "$2*0.00725787}' > /tmp/display.txt
 	signal
-
 fi
 
 /bin/sleep 3
 echo "" > /tmp/display.txt
 signal
-
-
-
-
